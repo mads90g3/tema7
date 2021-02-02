@@ -1,9 +1,20 @@
-
 .section_wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 2vw;
-    }
-header, footer{
+}
+
+img {
+    width: 100%;
+}
+
+.art1,
+.art2 {
+    border: 1px solid#333;
+}
+
+header,
+footer {
     text-align: center;
+    padding: 10px;
 }

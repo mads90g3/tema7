@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-gap: 20px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .art1,
+        .art2 {
+            border: 1px solid#333;
+        }
+
+        header,
+        footer {
+            text-align: center;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        Titel
+    </header>
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+            <article>
+                <div class="art1">
+                    <img src="https://placeimg.com/600/600/any" alt="">
+                    <h3>Article 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, aut id consequuntur quaerat, mollitia molestiae, eveniet illo ea cum, facilis commodi voluptates animi perspiciatis earum? Sunt in magnam explicabo. Suscipit!</p>
+                </div>
+
+            </article>
+            <article>
+                <div class="art2">
+                    <img src="https://placeimg.com/600/600/any" alt="">
+                    <h3>Article 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, aut id consequuntur quaerat, mollitia molestiae, eveniet illo ea cum, facilis commodi voluptates animi perspiciatis earum? Sunt in magnam explicabo. Suscipit!</p>
+                </div>
+            </article>
+        </section>
+
+    </main>
+    <footer>This is the footer</footer>
+
+    <script>
+        const overskrift = document.querySelector("header");
+        console.log(overskrift);
+        const overskriftArticle1 = document.querySelector(".art1 h3");
+        console.log(overskriftArticle1);
+        const overskriftArticle2 = document.querySelector(".art2 h3");
+        console.log(overskriftArticle2);
+        const pArt1 = document.querySelector(".art1 p");
+        console.log(pArt1);
+        const pArt2 = document.querySelector(".art2 p");
+        console.log(pArt2);
+        const billede1 = document.querySelector(".art1 img");
+        console.log(billede1);
+        const billede2 = document.querySelector(".art2 img");
+        console.log(billede2);
+
+
+        overskrift.textContent = "Ny titel";
+        overskriftArticle1.textContent = "Ny underoverskrift1";
+        overskriftArticle2.textContent = "Ny underoverskrift2";
+        pArt1.textContent="hej med dig jeg hedder mads";
+        pArt2.textContent="hej med dig jeg hedder mads";
+        billede1.src="http://mabe-kea.dk/E19/pics/pig.png";
+        billede2.src="http://mabe-kea.dk/E19/pics/pig.png";
+        billede1.alt="billede 1";
+        billede2.alt="billede 2";
+
+
+
+
+    </script>
+</body>
+
+</html>

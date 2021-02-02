@@ -13,23 +13,27 @@
     <p>Skriv dit tal her!</p>
     <input type="text" id="nummer">
     <button>Gæt!</button>
+    <button id="nytSpil">Nyt spil</button>
 
 
 
     <script>
-        let tal = 1;
-        tal = Math.round(Math.random() * 20);
+        const tilfaeldigtTal = Math.round(Math.random() * 20);
+        let antalGæt = 0;
         document.querySelector("button").addEventListener("click", buttonClicked);
 
         function buttonClicked() {
-            let nummer = document.querySelector("#nummer").value;
+            antalGæt++;
+            const guess = document.querySelector("#nummer").value;
 
-            if (nummer > tal) {
-                console.log("tallet er for højt, prøv igen!");
-            } else if (nummer < tal) {
-                console.log("tallet er for lavt, prøv igen!");
-            } else if (nummer == tal) {
-                console.log("Tillykke du har gættet rigtig!")
+            console.log("brugerGæt", guess);
+
+            if (guess == tilfaeldigtTal) {
+                console.log(`RIGTIGT! Du har gættet ${antalGæt} gange`);
+            } else if (guess < tilfaeldigtTal) {
+                console.log(`FOR LAVT! Du har gættet ${antalGæt} gange`);
+            } else {
+                console.log(`FOR HØJT! Du har gættet ${antalGæt} gange`)
             }
 
         }

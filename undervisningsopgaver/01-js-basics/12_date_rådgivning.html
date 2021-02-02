@@ -11,21 +11,44 @@
 <body>
 
     <h2>Når man skal date bør man finde en, som hverken er for ung eller for gammel (half your age plus seven reglen)</h2>
-    <p>din egen alder: 23</p>
+
+    <p>din egen alder</p>
+    <input type="text" id="dinAlderTxt">
     <p>din dates alder</p>
-    <input type="text" id="datesAlder">
-    <button>Tjek om reglen er overholdt!</button>
+    <input type="text" id="datesAlderTxt">
+    <button>går det?</button>
 
     <script>
+        let dinAlder;
+        let datesAlder;
+        let minimumAlder;
+        let maximumAlder;
+
         document.querySelector("button").addEventListener("click", buttonClicked);
 
         function buttonClicked() {
-            let egenAlder = 24;
-            let datesAlder = document.querySelector("#datesAlder").value;
+            dinAlder = document.querySelector("#dinAlderTxt").value;
+            datesAlder = document.querySelector("#datesAlderTxt").value;
+            //hvad er det yngste din date må være
+            minimumAlder = Math.round(dinAlder / 2 + 7);
+            maximumAlder = Math.round((dinAlder - 7) * 2);
+            console.log("minimumAlder", minimumAlder);
+            console.log("maximumAlder", maximumAlder);
 
-            if(datesAlder=egenAlder/2+7){
-                console.log("den går an");
+            if (dinAlder < 15 || datesAlder < 15) {
+                console.log("En af parterne er for unge");
+            } else {
+                if (datesAlder >= minimumAlder && datesAlder <= maximumAlder) {
+                    console.log("Det er passende");
+                } else if (datesAlder < minimumAlder) {
+                    console.log(`du er ${dinAlder} og din date er ${datesAlder} din date er ${minimumAlder-datesAlder} år for ung`);
+                }else if (datesAlder>= maximumAlder){
+                    console.log(`du er ${dinAlder} og din date er ${datesAlder} din date er ${datesAlder-maximumAlder} år for gammel`);
+                }
             }
+
+
+
         }
 
     </script>

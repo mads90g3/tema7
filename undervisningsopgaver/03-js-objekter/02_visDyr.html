@@ -12,7 +12,6 @@
     <main>
         <article>
         <img src="" alt="">
-
         </article>
     </main>
 
@@ -35,7 +34,7 @@
 
             const destination = document.querySelector("article");
             destination.textContent = (`dyr: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`);
-            destination.querySelector("img").src = dyr.billede;
+            destination.src = dyr.billede;
 
 
 

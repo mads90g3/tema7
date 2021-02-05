@@ -25,11 +25,10 @@
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", start);
         const container = document.querySelector("section");
         const temp = document.querySelector("template");
 
-        const fil = "alleDyr.json";
+        const fil = "01-alleDyr.json";
 
         async function hentdata() {
             const respons = await fetch(fil);
@@ -38,8 +37,6 @@
 
         }
 
-        function start() {
-            console.log("dom er loaded");}
 
         function vis(dyr){
 
@@ -51,9 +48,9 @@
                 klon.querySelector("#p2").textContent = "levested: " + dyr.levested;
                 container.appendChild(klon);
             })
-
         }
-        hentdata();
+
+        hentdata(fil);
 
     </script>
 </body>
